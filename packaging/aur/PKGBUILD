@@ -10,7 +10,7 @@ license=('GPL-3.0-or-later')
 depends=('bash' 'sudo')
 optdepends=('curl: install Claude Code from the menu')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-sha256sums=('SKIP') # after tagging the release: updpkgsums
+sha256sums=('2d2a42b351d315d00cd3d8957bcfd4652dbc24a165c510f24ec0966a307bc96c')
 
 package() {
   cd "$srcdir/$_reponame-$pkgver"
