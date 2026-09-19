@@ -14,8 +14,8 @@ Simple package installer for Linux beginners: one interface for `apt`, `dnf`, `y
 ## Installation
 
 ```bash
-# Arch / AUR
-yay -S installer-beginners
+# Arch Linux (add the repository first, see below)
+sudo pacman -Syu installer-beginners
 
 # From source
 git clone https://github.com/S00what/installer-beginners
@@ -36,3 +36,19 @@ installer-beginners --help
 ## License
 
 GPL-3.0-or-later, see [LICENSE](LICENSE).
+
+## Arch Linux (pacman repository)
+
+Add to `/etc/pacman.conf`:
+
+```ini
+[installer-beginners]
+SigLevel = Optional TrustAll
+Server = https://github.com/S00what/installer-beginners/releases/download/repo
+```
+
+Then:
+
+```bash
+sudo pacman -Syu installer-beginners
+```
