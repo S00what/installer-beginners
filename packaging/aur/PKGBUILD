@@ -1,0 +1,18 @@
+# Maintainer: zakolebal_exe <zakolebal.exe@gmail.com>
+pkgname=installer-beginners
+_reponame=installer-beginners
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Simple package installer for beginners (apt, dnf, pacman, zypper, apk, xbps, brew)"
+arch=('any')
+url="https://github.com/S00what/installer-beginners"
+license=('GPL-3.0-or-later')
+depends=('bash' 'sudo')
+optdepends=('curl: install Claude Code from the menu')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
+sha256sums=('SKIP') # after tagging the release: updpkgsums
+
+package() {
+  cd "$srcdir/$_reponame-$pkgver"
+  make DESTDIR="$pkgdir" PREFIX=/usr install
+}
